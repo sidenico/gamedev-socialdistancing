@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvuuq6xb1v6h8"]
+
+[ext_resource type="PackedScene" uid="uid://cjm8xggb1df7p" path="res://Player.tscn" id="1_0v8f6"]
+[ext_resource type="Script" path="res://EnemySpawner.gd" id="2_spawner"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 240)
+
+[node name="Player" parent="." instance=ExtResource("1_0v8f6")]
+position = Vector2(320, 240)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("2_spawner")
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 1.0
+autostart = true
