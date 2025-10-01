@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://5yss64u1nm3t"]
+
+[ext_resource type="PackedScene" uid="uid://bc48wyr0tccsw" path="res://assets/map/MapTrain.tmx" id="1_2tsk8"]
+
+[node name="World" type="Node2D"]
+
+[node name="MapTrain" parent="." instance=ExtResource("1_2tsk8")]

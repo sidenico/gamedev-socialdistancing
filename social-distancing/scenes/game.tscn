@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6id4muv5rmhn"]
+
+[ext_resource type="Script" uid="uid://cad4drkyfkp32" path="res://scripts/game.gd" id="1_iywne"]
+[ext_resource type="PackedScene" uid="uid://byshbv528rjgv" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://5yss64u1nm3t" path="res://scenes/world.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://byw77vhsgkgbr" path="res://scenes/npc_spawner.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b80pwn7uyq103" path="res://scenes/health_bar.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_iywne")
+
+[node name="World" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(13, 37)
+
+[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(300, 182)
+
+[node name="NPC Spawner" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(157, 175)
+
+[node name="spawner_1" type="Node2D" parent="NPC Spawner"]
+position = Vector2(19, -49)
+
+[node name="spawner_2" type="Node2D" parent="NPC Spawner"]
+position = Vector2(310, -44)
+
+[node name="spawner_3" type="Node2D" parent="NPC Spawner"]
+position = Vector2(424, -46)
+
+[node name="spawner_4" type="Node2D" parent="NPC Spawner"]
+position = Vector2(580, 154)
+
+[node name="spawner_5" type="Node2D" parent="NPC Spawner"]
+position = Vector2(177, 155)
+
+[node name="spawner_6" type="Node2D" parent="NPC Spawner"]
+position = Vector2(-54, 152)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(416, 193)
+zoom = Vector2(2.295, 2.685)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="Health Bar" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
