@@ -3,9 +3,14 @@ extends CharacterBody2D
 enum State { HEALTHY, SICK }
 @export var state: State = State.HEALTHY
 @export var speed: float = 100.0
+@export var possible_appearances: Array[SpriteFrames]
 
 
-func _ready():
+func _ready():	
+	
+	if not possible_appearances.is_empty():
+		var random_appearance = possible_appearances.pick_random()
+		$AnimatedSprite2D.sprite_frames = random_appearance
 	$Area2D.body_entered.connect(_on_body_entered)
 	update_color()
 
