@@ -45,3 +45,5 @@ scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
 
 [node name="Health Bar" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+
+[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]

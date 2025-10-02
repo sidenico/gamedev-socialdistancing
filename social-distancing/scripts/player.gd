@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal player_died
+
 @onready var slowdown_timer = $Timer
 
 @export var speed : float = 150
@@ -68,6 +70,7 @@ func apply_damage(damage: int):
 	if health_bar_ref:
 		health_bar_ref.set_health(health)
 	if health <= 0:
+		emit_signal("player_died")
 		game_over()
 
 func game_over():

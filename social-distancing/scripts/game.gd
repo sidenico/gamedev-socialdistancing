@@ -17,3 +17,7 @@ func _ready():
 	
 	 # Option A: Give the player a reference to update
 	player.set_health_bar(health_bar)
+
+
+func _on_player_player_died() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
